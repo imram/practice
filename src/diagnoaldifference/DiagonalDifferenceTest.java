@@ -3,7 +3,6 @@ package diagnoaldifference;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 public class DiagonalDifferenceTest {
@@ -30,10 +29,10 @@ public class DiagonalDifferenceTest {
         int sumOfLeftDiagonal = 0;
         int sumOfRightDiagonal = 0;
 
-        for ( int rowIndex = 0, columnIndex = 0;rowIndex < a.length; rowIndex++, columnIndex++)
+        for (int rowIndex = 0, columnIndex = 0; rowIndex < a.length; rowIndex++, columnIndex++)
             sumOfLeftDiagonal += a[rowIndex][columnIndex];
 
-        for (int rowIndex = 0, columnIndex = a.length - 1;rowIndex < a.length; rowIndex++, columnIndex--)
+        for (int rowIndex = 0, columnIndex = a.length - 1; rowIndex < a.length; rowIndex++, columnIndex--)
             sumOfRightDiagonal += a[rowIndex][columnIndex];
 
         return Math.abs( sumOfLeftDiagonal - sumOfRightDiagonal );
