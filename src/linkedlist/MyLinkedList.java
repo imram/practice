@@ -1,8 +1,5 @@
 package linkedlist;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class MyLinkedList {
     private Node head;
     private int size;
@@ -195,44 +192,30 @@ public class MyLinkedList {
 
             if (counter == myLinkedList1.size) {
                 for (int remaining = counter; remaining < myLinkedList2.size; remaining++)
-                    mergedList.append(myLinkedList2.getElementByPosition(remaining+1));
+                    mergedList.append(myLinkedList2.getElementByPosition(remaining + 1));
             } else {
                 for (int remaining = counter; remaining < myLinkedList1.size; remaining++)
-                    mergedList.append(myLinkedList1.getElementByPosition(remaining+1));
+                    mergedList.append(myLinkedList1.getElementByPosition(remaining + 1));
             }
         }
         return mergedList;
     }
 
-    /*public static MyLinkedList removeDuplicate(MyLinkedList myLinkedList) {
-        MyLinkedList uniqueList = new MyLinkedList();
-        int index = 0;
-        Set<Integer> data = new HashSet();
-        while(index < myLinkedList.size) {
-            int elementByPosition = myLinkedList.getElementByPosition(index + 1);
-            boolean added = data.add(elementByPosition);
-            if(added) {
-                uniqueList.append(elementByPosition);
-            }
-            index++;
-        }
-        return uniqueList;
-    }*/
-
     public static MyLinkedList removeDuplicate(MyLinkedList myLinkedList) {
-       if(myLinkedList == null || myLinkedList.size <=1) return myLinkedList;
-       if(myLinkedList.size > 1) {
-           Node current = myLinkedList.head;
-           while (current != null && current.next != null) {
-               if(current.data == current.next.data) {
-                   current.next = current.next.next;
-               }
-               else {
-               current = current.next;}
-           }
+        if (myLinkedList == null || myLinkedList.size <= 1)
+            return myLinkedList;
+        if (myLinkedList.size > 1) {
+            Node current = myLinkedList.head;
+            while (current != null && current.next != null) {
+                if (current.data == current.next.data) {
+                    current.next = current.next.next;
+                } else {
+                    current = current.next;
+                }
+            }
 
-       }
-       return myLinkedList;
+        }
+        return myLinkedList;
 
     }
 
