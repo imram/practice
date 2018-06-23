@@ -10,6 +10,8 @@ import org.junit.Test;
  */
 public class ParagraphWordWiseReverseTest {
 
+    public static final String DELIMETER = "\\s+";
+
     private void assertReverseParagraph(String paragraph, String expected) {
         assertThat(paragraphReverse(paragraph), is(expected));
     }
@@ -33,7 +35,7 @@ public class ParagraphWordWiseReverseTest {
             return "";
 
         StringBuilder builder = new StringBuilder();
-        String[] words = paragraph.trim().split("\\s+");
+        String[] words = paragraph.trim().split(DELIMETER);
 
         for (int index = 0; index < words.length; index++) {
             builder.append(new String(reverseWord(words[index])));
